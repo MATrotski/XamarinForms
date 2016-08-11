@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage" Title="{local:Titles Name}">
+  <StackLayout Orientation="Vertical">
+      <ListView x:Name="DbList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Name}" FontSize="Medium" Style="{DynamicResource Key = LabelStyle}"/>
+                <Entry Placeholder="{local:Titles Name}" FontSize="Medium" Style="{DynamicResource Key = EntryStyle}"/>
+                <Label Text="{Binding Name}" FontSize="Medium"/>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
+    <Label x:Name="Selected" Text="sdhjgdfhghfdjhj" FontSize="Large" Style="{StaticResource LabelStyle}"/>
+    <Label x:Name="Selected1" Text="sdhjgdfhghfdjhj" FontSize="Large" />
+    
+    </StackLayout>
+</ContentPage>
