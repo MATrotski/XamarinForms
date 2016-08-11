@@ -18,5 +18,7 @@ c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\obj\Debug\Ap
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\obj\Debug\ru\App2.resources.dll
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\obj\Debug\App2.dll
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\obj\Debug\App2.pdb
-c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\obj\Debug\App2.dll.mdb
-c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2\bin\Debug\App2.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2\obj\Debug\App2.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2\bin\Debug\App2.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2\obj\Debug\App2.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2\bin\Debug\App2.dll.mdb

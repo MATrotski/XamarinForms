@@ -14,20 +14,25 @@ namespace App2
         public MainPage()
         {
             InitializeComponent();
-            books = new List<Book>()
+            /*books = new List<Book>()
             {
-                new Book {Id = 0, Name="C#", Author = "1111"},
+                new Book {Id = 0, Name="kljkhg", Author = "1111"},
                 new Book {Id = 1, Name="fsfsgfd", Author = "dhgfhfghf"},
                 new Book {Id = 2, Name="4543654", Author = "qwe"},
                 new Book {Id = 3, Name="fdfgf", Author = "333333"}
-            };
+            };*/
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            //DbList.ItemTemplate = await App._bookManager.GetAllItems();
-
-            DbList.BindingContext = books;
+            await App._bookManager.AddOrUpdate(new Book { Id = 0, Name = "kljkhg", Author = "1111" });
+            await App._bookManager.AddOrUpdate(new Book { Id = 1, Name = "ui", Author = "6768" });
+            await App._bookManager.AddOrUpdate(new Book { Id = 2, Name = ",m.,,.,k", Author = "65" });
+            await App._bookManager.AddOrUpdate(new Book { Id = 3, Name = "tytutyuyt", Author = "89877t76" });
+            await App._bookManager.AddOrUpdate(new Book { Id = 4, Name = "mn,hfgjgj", Author = "35345" });
+            await App._bookManager.AddOrUpdate(new Book { Id = 5, Name = "iuopp", Author = "77878" });
+            var qqq = await App._bookManager.GetAllItems();
+            DbList.BindingContext = await App._bookManager.GetAllItems();//books;
             base.OnAppearing();
         }
 

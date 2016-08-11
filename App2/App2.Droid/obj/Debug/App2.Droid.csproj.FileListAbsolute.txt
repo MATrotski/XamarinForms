@@ -63,5 +63,5 @@ c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\obj\De
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\obj\Debug\App2.Droid.dll.mdb
-c:\users\admin\documents\visual studio 2015\Projects\App2\App2\App2.Droid\bin\Debug\App2.Droid.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2.Droid\obj\Debug\App2.Droid.dll.mdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\App2\App2\App2.Droid\bin\Debug\App2.Droid.dll.mdb
