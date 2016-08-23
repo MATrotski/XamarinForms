@@ -17,20 +17,12 @@ namespace App2 {
     public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView DbList;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label Selected;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label Selected1;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MainPage));
-            DbList = this.FindByName<global::Xamarin.Forms.ListView>("DbList");
             Selected = this.FindByName<global::Xamarin.Forms.Label>("Selected");
-            Selected1 = this.FindByName<global::Xamarin.Forms.Label>("Selected1");
         }
     }
 }

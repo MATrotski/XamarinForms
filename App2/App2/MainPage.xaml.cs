@@ -1,4 +1,5 @@
 ﻿using App2.Database.Models;
+using App2.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using Xamarin.Forms;
 
 namespace App2
 {
+
     public partial class MainPage : ContentPage
     {
         private readonly IList<Book> books;
@@ -23,22 +25,17 @@ namespace App2
             };*/
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
-            await App._bookManager.AddOrUpdate(new Book { Id = 0, Name = "kljkhg", Author = "1111" });
-            await App._bookManager.AddOrUpdate(new Book { Id = 1, Name = "ui", Author = "6768" });
-            await App._bookManager.AddOrUpdate(new Book { Id = 2, Name = ",m.,,.,k", Author = "65" });
-            await App._bookManager.AddOrUpdate(new Book { Id = 3, Name = "tytutyuyt", Author = "89877t76" });
-            await App._bookManager.AddOrUpdate(new Book { Id = 4, Name = "mn,hfgjgj", Author = "35345" });
-            await App._bookManager.AddOrUpdate(new Book { Id = 5, Name = "iuopp", Author = "77878" });
-            var qqq = await App._bookManager.GetAllItems();
-            DbList.BindingContext = await App._bookManager.GetAllItems();//books;
+            //this.BindingContext = new BooksViewModel();
+            //DbList.BindingContext = await App._bookManager.GetAllItems();
             base.OnAppearing();
         }
 
-        protected void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            Selected.Text = ((Book)e.SelectedItem).Name;
-        }
+        //protected void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+            //Selected.Text = ((Book)e.SelectedItem).Name;
+        //}
+
     }
 }

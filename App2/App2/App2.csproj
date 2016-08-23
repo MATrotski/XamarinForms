@@ -40,6 +40,9 @@
     </Compile>
     <Compile Include="Database\Managers\BooksManager.cs" />
     <Compile Include="Database\Models\Books.cs" />
+    <Compile Include="DemoPage.xaml.cs">
+      <DependentUpon>DemoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ISQLite.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -52,6 +55,7 @@
       <DependentUpon>Titles.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="TitlesExtension.cs" />
+    <Compile Include="ViewModels\BooksViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -99,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

@@ -23,8 +23,7 @@ namespace App2.Database.Managers
 
         public async Task<IEnumerable<Book>> GetAllItems()
         {
-            var aaa = await _db.Table<Book>().ToListAsync();
-            return aaa;
+            return await _db.Table<Book>().ToListAsync();
         }
 
         public async Task<IEnumerable<Book>> GetBooksByAuthor(string author)
@@ -35,11 +34,11 @@ namespace App2.Database.Managers
 
         public async Task<int> AddOrUpdate(Book book)
         {
-            //if (book.Id != 0)
-            //{
-                //await _db.UpdateAsync(book);
-                //return book.Id;
-            //}
+            if (book.Id < 0)
+            {
+                await _db.UpdateAsync(book);
+                return book.Id;
+            }
             return await _db.InsertAsync(book);
         }
 
