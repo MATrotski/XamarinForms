@@ -11,13 +11,18 @@ namespace App2.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ICommand AddButtonCommand { protected get; set; }
+        public ICommand AddButtonCommand { get; set; }
+
+        public ICommand RemoveAllButtonComand { get; set; }
 
         public IEnumerable<Book> ListItems
         {
             get
-            {
-                return App._bookManager.GetAllItems().Result;
+            { 
+                return Task.Factory.StartNew(async () =>
+                {
+                    return await App._bookManager.GetAllItemsAsync();
+                }).Result.Result;
             }
 
             set
@@ -26,7 +31,7 @@ namespace App2.ViewModels
                 {
                     foreach (var item in value)
                     {
-                        await App._bookManager.AddOrUpdate(item);
+                        await App._bookManager.AddOrUpdateAsync(item);
                     }
                     OnPropertyChanged("ListItems");
                 });
@@ -50,12 +55,10 @@ namespace App2.ViewModels
             }
         }
 
-        //Book Book { get; set; }
-
         public BooksViewModel()
         {
-            //Book = new Book();
             this.AddButtonCommand = new Command(AddButton);
+            this.RemoveAllButtonComand = new Command(RemoveAllButton);
         }
 
         private void AddButton()
@@ -69,59 +72,20 @@ namespace App2.ViewModels
                 new Book {Id = 5, Name = "iuopp", Author = "77878"}
             };
             ListItems = items;
-            /*Task.Factory.StartNew(async () =>
-            {
-                await App._bookManager.AddOrUpdate(new Book {Id = 1, Name = "ui", Author = "6768"});
-                await App._bookManager.AddOrUpdate(new Book {Id = 2, Name = ",m.,,.,k", Author = "65"});
-                await App._bookManager.AddOrUpdate(new Book {Id = 3, Name = "tytutyuyt", Author = "89877t76"});
-                await App._bookManager.AddOrUpdate(new Book {Id = 4, Name = "mn,hfgjgj", Author = "35345"});
-                await App._bookManager.AddOrUpdate(new Book {Id = 5, Name = "iuopp", Author = "77878"});
-            });*/
+        }
+
+        private void RemoveAllButton()
+        {
+            Task.Factory.StartNew(async()=>
+            { 
+                await App._bookManager.RemoveAll();
+            });
         }
 
         protected void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             SelectedText = ((Book)e.SelectedItem).Name;
         }
-
-        /*public int Id {
-            get { return Book.Id; }
-            set
-            {
-                if (Book.Id != value)
-                {
-                    Book.Id = value;
-                    OnPropertyChanged("Id");
-                }
-            }
-        }
-
-        public string Name
-        {
-            get { return Book.Name; }
-            set
-            {
-                if (Book.Name != value)
-                {
-                    Book.Name = value;
-                    OnPropertyChanged("Name");
-                }
-            }
-        }
-
-        public string Author
-        {
-            get { return Book.Author; }
-            set
-            {
-                if (Book.Author != value)
-                {
-                    Book.Author = value;
-                    OnPropertyChanged("Author");
-                }
-            }
-        }*/
-
 
         public void OnPropertyChanged(string propName)
         {

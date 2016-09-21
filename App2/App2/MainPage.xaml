@@ -2,18 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App2"
-             x:Class="App2.MainPage" Title="{local:Titles Name}" >
-  <!--<StackLayout Orientation="Vertical">-->
-    <!-- BindingContext="{Binding}" -->
-    <!--
+             x:Class="App2.MainPage" Title="{local:Titles Name}">
+  
+  <StackLayout Orientation="Vertical">
+    
       <ListView x:Name="DbList" ItemsSource="{Binding ListItems}" >
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <ViewCell.View>
               <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Name}" FontSize="Medium" Style="{DynamicResource Key = LabelStyle}"/>
-                <Entry Placeholder="{local:Titles Name}" FontSize="Medium" Style="{DynamicResource Key = EntryStyle}"/>
+                <Label Text="{Binding Name}" FontSize="Medium" Style="{StaticResource Key = LabelStyle}"/>
+                <Entry Placeholder="{local:Titles Name}" FontSize="Medium" Style="{StaticResource Key = EntryStyle}"/>
               </StackLayout>
             </ViewCell.View>
           </ViewCell>
@@ -22,9 +22,8 @@
     </ListView>
    
     <Button x:Name="AddData" Text="AddData" Command ="{Binding AddButtonCommand}" Style="{StaticResource ButtonStyle}"/>
-    <Label x:Name="Selected" Text="{Binding SelectedText}" FontSize="Large" Style="{StaticResource LabelStyle}"/>-->
+    <Button x:Name="RemoveAllData" Text="RemoveAll" Command="{Binding RemoveAllButtonComand}" Style="{StaticResource ButtonStyle}"/>
+    <Label x:Name="Selected" Text="{Binding SelectedText}" FontSize="Large" Style="{StaticResource LabelStyle}"/>
 
-    <Label x:Name="Selected" Text="hdfjhgjdg" FontSize="Large"/>
-
-  <!--</StackLayout>-->
+  </StackLayout>
 </ContentPage>

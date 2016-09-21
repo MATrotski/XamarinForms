@@ -16,12 +16,12 @@ namespace App2.Database.Managers
             _db.CreateTableAsync<Book>();
         }
 
-        public async Task<Book> GetItem(int id)
+        public async Task<Book> GetItemAsync(int id)
         {
             return await _db.GetAsync<Book>(id);
         }
 
-        public async Task<IEnumerable<Book>> GetAllItems()
+        public async Task<IEnumerable<Book>> GetAllItemsAsync()
         {
             return await _db.Table<Book>().ToListAsync();
         }
@@ -32,7 +32,7 @@ namespace App2.Database.Managers
             //return await _db.Table<Book>().Where(b => b.Author == author).ToListAsync();
         }
 
-        public async Task<int> AddOrUpdate(Book book)
+        public async Task<int> AddOrUpdateAsync(Book book)
         {
             if (book.Id < 0)
             {
@@ -42,10 +42,19 @@ namespace App2.Database.Managers
             return await _db.InsertAsync(book);
         }
 
-        public async Task<int> DeleteItem(int id)
+        public async Task<int> DeleteItemAsync(int id)
         {
             var book = await _db.GetAsync<Book>(id);
             return await _db.DeleteAsync(book);
+        }
+
+        public async Task RemoveAll()
+        {
+            var books = await GetAllItemsAsync();
+            foreach (Book b in books)
+            {
+                await _db.DeleteAsync(b);
+            }
         }
     }
 }
